@@ -11,6 +11,10 @@ class App {
     this.searchBlock = new SearchBlock(document.getElementsByClassName('search-block')[0]);
     this.imageViewer = new ImageViewer(document.getElementsByClassName('images-wrapper')[0]);
     this.initModals();
+
+    if (!('ya-token' in localStorage)) {
+      Yandex.getToken();
+    }
   }
 
   /**

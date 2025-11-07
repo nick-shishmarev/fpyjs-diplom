@@ -4,7 +4,9 @@
  * */
 class SearchBlock {
   constructor( element ) {
+    this.element = element;
 
+    this.registerEvents();
   }
 
   /**
@@ -13,7 +15,17 @@ class SearchBlock {
    * только клик по кнопке "Заменить" перед отрисовкой очищает все отрисованные ранее изображения
    */
   registerEvents(){
+    const user = this.element.querySelector('input');
+    const replace = this.element.querySelector('.replace');
+    const add = this.element.querySelector('.add');
 
+    replace.onclick = () => {
+      App.imageViewer.clear();
+      VK.get(user.value, App.imageViewer.drawImages);
+    }
+
+    add.onclick = () => {
+      VK.get(user.value, App.imageViewer.drawImages);
+    }
   }
-
 }
