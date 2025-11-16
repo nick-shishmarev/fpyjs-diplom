@@ -79,7 +79,6 @@ class PreviewModal extends BaseModal {
    * Возвращает разметку из изображения, таблицы с описанием данных изображения и кнопок контроллеров (удаления и скачивания)
    */
   getImageInfo(item) {
-    const urlImg = item.preview;
     const nameImg = item.name;
     const dateImg = item.created;
     const sizeImg = item.size;
@@ -87,7 +86,7 @@ class PreviewModal extends BaseModal {
     const linkImg = item.file;
 
     return `<div class="image-preview-container">
-      <img src="${urlImg}" />
+      <img src="${linkImg}" />
       <table class="ui celled table">
         <thead>
           <tr><th>Имя</th><th>Создано</th><th>Размер</th></tr>
